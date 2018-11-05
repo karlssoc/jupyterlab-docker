@@ -23,6 +23,10 @@ RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/
   echo "export LANG=C.UTF-8" > /etc/profile.d/locale.sh && \
   ln -s /usr/include/locale.h /usr/include/xlocale.h
 
+
+# Install pyteomics & PyBIS
+RUN pip install lxml numpy matplotlib pyteomics PyBIS
+
 # Optional Clean-up
 #  RUN apk del glibc-i18n && \
 #  apk del .build-dependencies && \
